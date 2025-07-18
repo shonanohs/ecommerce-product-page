@@ -1,5 +1,6 @@
 :root {
     --orange: hsl(26, 100%, 55%);
+    --dark-orange: #d66600;
     --pale-orange: hsl(25, 100%, 94%);
     --very-dark-blue: hsl(220, 13%, 13%);
     --dark-grayish-blue: hsl(219, 9%, 45%);
@@ -77,7 +78,7 @@ body {
   border-bottom: 3px solid var(--orange);
 }
 
-#cart-img {
+#cart-img-nav {
   height: 20px;
   width: auto;
 }
@@ -192,3 +193,43 @@ body {
     margin: 0;
 }
 
+/* User Input Button Styling */
+
+#quantity-cart-container {
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    margin-top: 3%;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    width: 120px;
+    background-color: var(--light-grayish-blue);
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.cart-btn {
+    background-color: var(--orange);
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 15px 20px 15px 20px;
+    color: var(--very-dark-blue);
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.cart-btn:hover {
+    background-color: var(--dark-orange);
+    cursor: pointer;
+}
+
+#cart-img-btn {
+    color: var(--very-dark-blue);
+}
