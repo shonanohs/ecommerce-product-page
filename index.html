@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./src/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
@@ -15,18 +15,26 @@
 <body>
 
   <!-- Navbar -->
-  <section id="navbar">
-    <img id="logo-img" src="./images/logo.svg"/>
-    <ul>
-      <li>Collections</li>
-      <li>Men</li>
-      <li>Women</li>
-      <li>About</li>
-      <li>Contact</li>
-    </ul>
-    
-    <img id="cart-img" src="./images/icon-cart.svg"/>
-    <img id="avatar-img" src="./images/image-avatar.png"/>
+  <section class="navbar">
+    <div class="nav-left">
+      <img class="image" id="logo-img" src="./images/logo.svg"/>
+    </div>
+    <div class="nav-centre">
+      <nav>
+        <ul id="navbar-buttons">
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <img class="image" id="cart-img" src="./images/icon-cart.svg"/>
+      <img class="image" id="avatar-img" src="./images/image-avatar.png"/>
+    </div>
   </section>
 
   <hr class="separator"/>
@@ -34,11 +42,11 @@
   <!-- Product Page -->
   <section id="product-page">
     <div id="product-image-container">
-      <img id="product-img-main" src="./images/image-product-1.jpg" alt=""/>
-      <img id="product-thumbnail-1" src="./images/image-product-1-thumbnail.jpg" alt=""/>
-      <img id="product-thumbnail-2" src="./images/image-product-2-thumbnail.jpg" alt=""/>
-      <img id="product-thumbnail-3" src="./images/image-product-3-thumbnail.jpg" alt=""/>
-      <img id="product-thumbnail-4" src="./images/image-product-4-thumbnail.jpg" alt=""/>
+      <img class="image" id="product-img-main" src="./images/image-product-1.jpg" alt=""/>
+      <img class="image" id="product-thumbnail-1" src="./images/image-product-1-thumbnail.jpg" alt=""/>
+      <img class="image" id="product-thumbnail-2" src="./images/image-product-2-thumbnail.jpg" alt=""/>
+      <img class="image" id="product-thumbnail-3" src="./images/image-product-3-thumbnail.jpg" alt=""/>
+      <img class="image" id="product-thumbnail-4" src="./images/image-product-4-thumbnail.jpg" alt=""/>
     </div>
 
     <div id="product-info-container">
@@ -57,9 +65,9 @@
       <!-- User Input Section -->
       <div id="quantity-cart-container">
         <div>
-          <img id="minus-btn" src="./images/icon-minus.svg" role="button"/>
+          <img class="image" id="minus-btn" src="./images/icon-minus.svg" role="button"/>
           <p>0</p>
-          <img id="plus-btn" src="./images/icon-plus.svg" role="button"/>
+          <img class="image" id="plus-btn" src="./images/icon-plus.svg" role="button"/>
           <button><img id="cart-img" src="./images/icon-cart.svg"/>Add to cart</button>
         </div>
 
