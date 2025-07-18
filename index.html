@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+  <title>E-commerce product page</title>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <section id="navbar">
+    <img id="logo-img" src="./images/logo.svg"/>
+    <ul>
+      <li>Collections</li>
+      <li>Men</li>
+      <li>Women</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+    
+    <img id="cart-img" src="./images/icon-cart.svg"/>
+    <img id="avatar-img" src="./images/image-avatar.png"/>
+  </section>
+
+  <hr class="separator"/>
+
+  <!-- Product Page -->
+  <section id="product-page">
+    <div id="product-image-container">
+      <img id="product-img-main" src="./images/image-product-1.jpg" alt=""/>
+      <img id="product-thumbnail-1" src="./images/image-product-1-thumbnail.jpg" alt=""/>
+      <img id="product-thumbnail-2" src="./images/image-product-2-thumbnail.jpg" alt=""/>
+      <img id="product-thumbnail-3" src="./images/image-product-3-thumbnail.jpg" alt=""/>
+      <img id="product-thumbnail-4" src="./images/image-product-4-thumbnail.jpg" alt=""/>
+    </div>
+
+    <div id="product-info-container">
+      <h3 id="company-name">Sneaker Company</h3>
+      <h1 id="product-name">Fall Limited Edition Sneakers</h1>
+      <p id="product-info">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a 
+      durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+      <div> 
+          <h2 id="product-price-discounted">$125.00</h2>
+          <div>50%</div>
+      </div>
+      <h3 id="product-price-original">$250.00</h3>
+      
+      <!-- User Input Section -->
+      <div id="quantity-cart-container">
+        <div>
+          <img id="minus-btn" src="./images/icon-minus.svg" role="button"/>
+          <p>0</p>
+          <img id="plus-btn" src="./images/icon-plus.svg" role="button"/>
+          <button><img id="cart-img" src="./images/icon-cart.svg"/>Add to cart</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>  
+</body>
+</html>
