@@ -32,8 +32,15 @@
     </div>
 
     <div class="nav-right">
-      <img class="image" id="cart-img-nav" src="./images/icon-cart.svg"/>
+      <img class="image empty-cart" id="cart-img-nav" src="./images/icon-cart.svg"/>
       <img class="image" id="avatar-img" src="./images/image-avatar.png"/>
+      <div id="cart-info" class="cart-info hidden overlay">
+        <div id="cart-info-content">
+          <h3 id="cart-title">Cart</h3>
+          <hr class="separator-full-length"/>
+          <h3 id="empty-cart-text">Your cart is empty.</h3>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -91,6 +98,8 @@
         </div>
       </div>
     </div>
+
+
 
   </section>
   <script type="module" src="src/script.js"></script>

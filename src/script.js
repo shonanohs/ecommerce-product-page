@@ -7,6 +7,7 @@ const thumbnails = document.querySelectorAll(".product-thumbnail");
 const lightboxThumbnails = document.querySelectorAll(".lightbox-product-thumbnail");
 const lightboxImg = document.getElementById("lightbox-img");
 const lightbox = document.getElementById("lightbox");
+const cartInfo = document.getElementById("cart-info");
 
 // Quantity buttons
 document.getElementById("plus-btn").addEventListener("click", () => updateQuantity("plus"));
@@ -37,6 +38,11 @@ productImgMain.addEventListener("click", () => {
 });
 document.getElementById("close-lightbox").addEventListener("click", () => {
   lightbox.classList.add("hidden");
+});
+
+// Open/close cart
+document.getElementById("cart-img-nav").addEventListener("click", () => {
+    cartInfo.classList.toggle("hidden");
 });
 
 // --- Functions ---
