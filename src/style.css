@@ -299,7 +299,7 @@ body {
 #lightbox-thumbnail-row {
   display: flex;
   justify-content: center;
-  gap: 5%;
+  gap: 5.5%;
   width: auto;
   max-width: 500px;
   margin-left: auto;
