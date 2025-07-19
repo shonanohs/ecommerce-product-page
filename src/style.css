@@ -24,6 +24,7 @@ body {
 
 .image:hover {
     cursor: pointer;
+    opacity: 70%;
 }
 
 /* Navbar */
@@ -136,6 +137,12 @@ body {
 .product-thumbnail {
     width: 20%;
     height: auto;
+    border: 2px solid transparent;
+}
+
+.product-thumbnail-clicked {
+    border: 2px solid var(--orange);
+    opacity: 60%;
 }
 
 #thumbnail-row {
