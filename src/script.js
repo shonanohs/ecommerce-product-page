@@ -24,6 +24,12 @@ productImgMain.addEventListener("click", () => {
   setLightboxImage(currentImageIndex); // Sync image with selected image on main page when opening
 });
 
+// Close lightbox when close icon clicked
+document.getElementById("close-lightbox").addEventListener("click", () => {
+    lightbox.classList.add("hidden");
+});
+
+
 // Functions
 function updateQuantity(direction) {
   if (direction === "plus") productQuantity++;
