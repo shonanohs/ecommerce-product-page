@@ -1,57 +1,49 @@
 let productQuantity = 0;
+let currentImageIndex = 1; // Tracks which thumbnail is selected (1–4)
 
 const quantityText = document.getElementById("quantity-text");
-const plusButton = document.getElementById("plus-btn").addEventListener("click", () => updateQuantity("plus"));
-const minusButton = document.getElementById("minus-btn").addEventListener("click", () => updateQuantity("minus"));
-
 const productImgMain = document.getElementById("product-img-main");
-const productThumbnail1 = document.getElementById("product-thumbnail-1");
-const productThumbnail2 = document.getElementById("product-thumbnail-2");
-const productThumbnail3 = document.getElementById("product-thumbnail-3");
-const productThumbnail4 = document.getElementById("product-thumbnail-4");
+const thumbnails = document.querySelectorAll(".product-thumbnail");
 
-productThumbnail1.addEventListener("click", () => {
-    updateMainProductImg("image-product-1"); 
-    addThumbnailStyleOnClick(productThumbnail1);
-});
-productThumbnail2.addEventListener("click", () => {
-    updateMainProductImg("image-product-2"); 
-    addThumbnailStyleOnClick(productThumbnail2); 
-});
-productThumbnail3.addEventListener("click", () => {
-    updateMainProductImg("image-product-3"); 
-    addThumbnailStyleOnClick(productThumbnail3);
-});
-productThumbnail4.addEventListener("click", () => {
-    updateMainProductImg("image-product-4"); 
-    addThumbnailStyleOnClick(productThumbnail4);
+document.getElementById("plus-btn").addEventListener("click", () => updateQuantity("plus"));
+document.getElementById("minus-btn").addEventListener("click", () => updateQuantity("minus"));
+
+// Set up thumbnail click listeners dynamically
+thumbnails.forEach((thumb, index) => {
+  thumb.addEventListener("click", () => {
+    currentImageIndex = index + 1; // Store which image is active
+    updateMainProductImg(currentImageIndex);
+    addThumbnailStyleOnClick(thumb);
+  });
 });
 
+// Open lightbox when clicking the main image
 productImgMain.addEventListener("click", () => {
-    document.getElementById("lightbox").classList.remove("hidden");
-})
+  const lightbox = document.getElementById("lightbox");
+  lightbox.classList.remove("hidden");
+  setLightboxImage(currentImageIndex); // Sync image with selected image on main page when opening
+});
 
-// Increase or decrease product quantity depending on button clicked
+// Functions
 function updateQuantity(direction) {
-    if (direction == "plus") {
-        productQuantity += 1;
-    } else if (direction == "minus" && productQuantity > 0) { // Prevent negative quantities
-        productQuantity -= 1;
-    }
-    quantityText.innerText = productQuantity;
+  if (direction === "plus") productQuantity++;
+  else if (direction === "minus" && productQuantity > 0) productQuantity--;
+  quantityText.innerText = productQuantity;
 }
 
-// Update main product image depending on thumbnail selected
-function updateMainProductImg(image) {
-    productImgMain.src = `./images/${image}.jpg`;
+// Update main product image based on selected thumbnail
+function updateMainProductImg(index) {
+  productImgMain.src = `./images/image-product-${index}.jpg`;
 }
 
-// Add styling depending on thumbnail image selected
+// Add styling to selected thumbnail
 function addThumbnailStyleOnClick(selectedThumbnail) {
-    // Remove the clicked class from all thumbnails
-    const allThumbnails = [productThumbnail1, productThumbnail2, productThumbnail3, productThumbnail4];
-    allThumbnails.forEach(thumb => thumb.classList.remove("product-thumbnail-clicked"));
+  thumbnails.forEach(t => t.classList.remove("product-thumbnail-clicked"));
+  selectedThumbnail.classList.add("product-thumbnail-clicked");
+}
 
-    // Add the clicked class only to the selected one
-    selectedThumbnail.classList.add("product-thumbnail-clicked");
+// Function for syncing the lightbox image
+function setLightboxImage(index) {
+  const lightboxImg = document.getElementById("lightbox-img");
+  lightboxImg.src = `./images/image-product-${index}.jpg`;
 }
