@@ -79,14 +79,25 @@ body {
   border-bottom: 3px solid var(--orange);
 }
 
+#logo-img {
+  opacity: 100%;
+}
+
 #cart-img-nav {
   height: 20px;
   width: auto;
 }
 
 #avatar-img {
+  border: 2px solid transparent;
   height: 50px;
   width: auto;
+  opacity: 100%;
+}
+
+#avatar-img:hover {
+  border: 2px solid var(--orange);
+  border-radius: 100%;
 }
 
 /* Rules for mobile devices */
@@ -148,8 +159,9 @@ body {
 #thumbnail-row {
   display: flex;
   justify-content: space-evenly;
+  gap: 5.5%;
   margin: 10px 0 0 0;
-  max-width: 600px; 
+  max-width: 600px;
 }
 
 /* Product Info */
@@ -241,3 +253,105 @@ body {
 #cart-img-btn {
     color: var(--very-dark-blue);
 }
+
+/* Lightbox */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+#lightbox-img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  min-width: 150px;
+  border-radius: 10px;
+  margin: 5%;
+}
+
+.lightbox-product-thumbnail {
+  width: clamp(60px, 10%, 100px);  /* Grows/shrinks with screen */
+  height: auto;
+  max-width: 500px;
+  min-width: 100px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.lightbox-product-thumbnail-clicked {
+    border: 2px solid var(--orange);
+    opacity: 60%;
+}
+
+#lightbox-thumbnail-row {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  width: auto;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#thumbnail-row {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#close-lightbox {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+}
+
+.direction-btn {
+  background-color: var(--light-grayish-blue);
+  border-radius: 100%;
+  border: none;
+  padding: 12px 14px 12px 14px;
+  margin: auto;
+  position: absolute;
+}
+
+.direction-icon {
+  max-width: 8px;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+  cursor: pointer;
+  opacity: 90%;
+}
+
+#prev-btn {
+  position: absolute;
+  top: 260px;
+  right: 480px;
+}
+
+#next-btn {
+  position: absolute;
+  top: 256px;
+  right: -15px;
+}
+

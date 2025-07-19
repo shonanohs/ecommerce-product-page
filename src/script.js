@@ -27,6 +27,10 @@ productThumbnail4.addEventListener("click", () => {
     addThumbnailStyleOnClick(productThumbnail4);
 });
 
+productImgMain.addEventListener("click", () => {
+    document.getElementById("lightbox").classList.remove("hidden");
+})
+
 // Increase or decrease product quantity depending on button clicked
 function updateQuantity(direction) {
     if (direction == "plus") {
