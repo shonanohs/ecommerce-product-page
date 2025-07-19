@@ -1,44 +1,61 @@
 let productQuantity = 0;
-let currentImageIndex = 1; // Tracks which thumbnail is selected (1–4)
+let currentImageIndex = 1;
 
 const quantityText = document.getElementById("quantity-text");
 const productImgMain = document.getElementById("product-img-main");
 const thumbnails = document.querySelectorAll(".product-thumbnail");
+const lightboxThumbnails = document.querySelectorAll(".lightbox-product-thumbnail");
 const lightboxImg = document.getElementById("lightbox-img");
+const lightbox = document.getElementById("lightbox");
 
+// Quantity buttons
 document.getElementById("plus-btn").addEventListener("click", () => updateQuantity("plus"));
 document.getElementById("minus-btn").addEventListener("click", () => updateQuantity("minus"));
 
+// Lightbox navigation buttons
 document.getElementById("next-btn").addEventListener("click", () => updateLightboxImage("next"));
 document.getElementById("prev-btn").addEventListener("click", () => updateLightboxImage("prev"));
 
-// Set up thumbnail click listeners dynamically
+// Thumbnail click for main page
 thumbnails.forEach((thumb, index) => {
   thumb.addEventListener("click", () => {
-    currentImageIndex = index + 1; // Store which image is active
-    updateMainProductImg(currentImageIndex);
-    addThumbnailStyleOnClick(thumb);
+    selectImage(index + 1);
   });
 });
 
-// Open lightbox when clicking the main image
+// Thumbnail click for lightbox
+lightboxThumbnails.forEach((thumb, index) => {
+  thumb.addEventListener("click", () => {
+    selectImage(index + 1);
+  });
+});
+
+// Open/close lightbox
 productImgMain.addEventListener("click", () => {
-  const lightbox = document.getElementById("lightbox");
   lightbox.classList.remove("hidden");
-  setLightboxImage(currentImageIndex); // Sync image with selected image on main page when opening
+  selectImage(currentImageIndex);
 });
-
-// Close lightbox when close icon clicked
 document.getElementById("close-lightbox").addEventListener("click", () => {
-    lightbox.classList.add("hidden");
+  lightbox.classList.add("hidden");
 });
 
+// --- Functions ---
 
-// Functions
 function updateQuantity(direction) {
-  if (direction === "plus") productQuantity++;
-  else if (direction === "minus" && productQuantity > 0) productQuantity--;
+  if (direction === "plus") {
+    productQuantity++;
+  }
+  else if (direction === "minus" && productQuantity > 0) { 
+    productQuantity--;
+  }
   quantityText.innerText = productQuantity;
+}
+
+function selectImage(index) {
+  currentImageIndex = index;
+  updateMainProductImg(index);
+  setLightboxImage(index);
+  updateThumbnailStyles(index);
 }
 
 // Update main product image based on selected thumbnail
@@ -46,23 +63,27 @@ function updateMainProductImg(index) {
   productImgMain.src = `./images/image-product-${index}.jpg`;
 }
 
-// Add styling to selected thumbnail
-function addThumbnailStyleOnClick(selectedThumbnail) {
-  thumbnails.forEach(thumb => thumb.classList.remove("product-thumbnail-clicked"));
-  selectedThumbnail.classList.add("product-thumbnail-clicked");
-}
-
 // Function for syncing the lightbox image
 function setLightboxImage(index) {
   lightboxImg.src = `./images/image-product-${index}.jpg`;
 }
 
+// Add 'selected' styling to both sets of thumbnails
+function updateThumbnailStyles(index) {
+  thumbnails.forEach((thumb, i) => {
+    thumb.classList.toggle("product-thumbnail-clicked", i + 1 === index);
+  });
+  lightboxThumbnails.forEach((thumb, i) => {
+    thumb.classList.toggle("lightbox-product-thumbnail-clicked", i + 1 === index);
+  });
+}
+
 // Update lightbox image when arrow buttons clicked
 function updateLightboxImage(direction) {
-    if (direction === "next") {
-        currentImageIndex = currentImageIndex === 4 ? 1 : currentImageIndex + 1;
-    } else if (direction === "prev") {
-        currentImageIndex = currentImageIndex === 1 ? 4 : currentImageIndex - 1;
-    }
-    setLightboxImage(currentImageIndex);
+  if (direction === "next") {
+    currentImageIndex = currentImageIndex === 4 ? 1 : currentImageIndex + 1;
+  } else if (direction === "prev") {
+    currentImageIndex = currentImageIndex === 1 ? 4 : currentImageIndex - 1;
+  }
+  selectImage(currentImageIndex);
 }
