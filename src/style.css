@@ -60,7 +60,7 @@ body {
 
 .nav-right {
   display: flex;
-  gap: 40px;
+  gap: 15px;
   align-items: center;
   flex: 0.5;
   position: relative;
@@ -464,4 +464,15 @@ body {
 #checkout-btn {
   width: 100%;
   margin-top: 20px;
+}
+
+#cart-quantity-icon {
+  position: relative;
+  right: 25px;
+  bottom: 9px;
+  background-color: var(--orange);
+  padding: 1px 6px 1px 6px;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 10px;
 }
