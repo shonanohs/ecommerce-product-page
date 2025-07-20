@@ -15,12 +15,11 @@
 <body>
 
   <!-- Navbar -->
-  <section class="navbar">
+  <nav class="navbar">
     <div class="nav-left">
-      <a href="index.html"><img class="image" id="logo-img" src="./images/logo.svg"/></a>
+      <a href="index.html"><img class="image" id="logo-img" src="./images/logo.svg" alt="Sneaker Company logo"/></a>
     </div>
     <div class="nav-centre">
-      <nav>
         <ul id="navbar-buttons">
           <li>Collections</li>
           <li>Men</li>
@@ -28,30 +27,31 @@
           <li>About</li>
           <li>Contact</li>
         </ul>
-      </nav>
     </div>
 
     <div class="nav-right">
-      <img class="image empty-cart" id="cart-img-nav" src="./images/icon-cart.svg"/>
-      <p id="cart-quantity-icon">0</p>
-      <img class="image" id="avatar-img" src="./images/image-avatar.png"/>
+      <button id="cart-img-nav" aria-label="Open or close the cart"><img class="image empty-cart" src="./images/icon-cart.svg" alt="Shopping cart"/></button>
+      <span id="cart-quantity-icon" aria-live="polite">0</span>
+      <img class="image" id="avatar-img" src="./images/image-avatar.png" alt="User avatar"/>
       <div id="cart-info" class="cart-info hidden overlay">
         <div id="cart-info-content">
           <h3 id="cart-title">Cart</h3>
           <hr class="separator-full-length"/>
 
+          <!-- Empty Shopping Cart -->
           <div class="cart-content empty" id="cart-empty">
             <h3 id="empty-cart-text">Your cart is empty.</h3>
           </div>
           
+          <!-- Full Shopping Cart -->
           <div class="hidden" id="cart-full">
             <div class="cart-content full">
-              <img class="image product-img" id="product-img-cart" src="./images/image-product-1-thumbnail.jpg" alt=""/>
+              <img class="image product-img" id="product-img-cart" src="./images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition Sneakers - cart view"/>
               <div>
                 <h3 id="cart-product-name">Fall Limited Edition Sneakers</h3>
-                <p id="cart-price">$125.00 x <span id="quantity-text-cart"></span><span id="cart-total-price"></span></p>
+                <p id="cart-price">$125.00 x <span id="cart-quantity-text"></span><span id="cart-total-price"></span></p>
               </div>
-              <img class="image" id="delete-img" src="./images/icon-delete.svg"/>
+              <img class="image" id="delete-btn" src="./images/icon-delete.svg" alt="Bin icon - remove item from cart"/>
             </div>
             <button class="cart-btn" id="checkout-btn">Checkout</button>
           </div>
@@ -59,19 +59,19 @@
         </div>
       </div>
     </div>
-  </section>
+  </nav>
 
   <hr class="separator"/>
 
   <!-- Product Page -->
-  <section id="product-page-container">
-    <div id="product-image-container">
-      <img class="image product-img" id="product-img-main" src="./images/image-product-1.jpg" alt=""/>
+  <main id="product-page-container">
+    <div id="product-img-container">
+      <img class="image product-img" id="product-img-main" src="./images/image-product-1.jpg" alt="Fall Limited Edition Sneakers - main view"/>
       <div id="thumbnail-row">
-        <img class="image product-img product-thumbnail product-thumbnail-clicked" id="product-thumbnail-1" src="./images/image-product-1-thumbnail.jpg" alt=""/>
-        <img class="image product-img product-thumbnail" id="product-thumbnail-2" src="./images/image-product-2-thumbnail.jpg" alt=""/>
-        <img class="image product-img product-thumbnail" id="product-thumbnail-3" src="./images/image-product-3-thumbnail.jpg" alt=""/>
-        <img class="image product-img product-thumbnail" id="product-thumbnail-4" src="./images/image-product-4-thumbnail.jpg" alt=""/>
+        <img class="image product-img product-thumbnail" id="product-thumbnail-1" src="./images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition Sneakers - thumbnail 1"/>
+        <img class="image product-img product-thumbnail" id="product-thumbnail-2" src="./images/image-product-2-thumbnail.jpg" alt="Fall Limited Edition Sneakers - thumbnail 2"/>
+        <img class="image product-img product-thumbnail" id="product-thumbnail-3" src="./images/image-product-3-thumbnail.jpg" alt="Fall Limited Edition Sneakers - thumbnail 3"/>
+        <img class="image product-img product-thumbnail" id="product-thumbnail-4" src="./images/image-product-4-thumbnail.jpg" alt="Fall Limited Edition Sneakers - thumbnail 4"/>
       </div>
     </div>
 
@@ -88,12 +88,12 @@
       </div>
       <h3 id="product-price-original">$250.00</h3>
       
-      <!-- User Input Section -->
+      <!-- Quantity Selector & 'Add to cart' Button -->
       <div id="quantity-cart-container">
         <div class="quantity-selector">
-            <img class="image" id="minus-btn" src="./images/icon-minus.svg" role="button"/>
+            <button id="minus-btn" aria-label="Decrease product quantity"><img class="image" src="./images/icon-minus.svg" role="button" alt="Minus icon"/></button>
             <p id="quantity-text">0</p>
-            <img class="image" id="plus-btn" src="./images/icon-plus.svg" role="button"/>
+            <button id="plus-btn" aria-label="Increase product quantity"><img class="image" src="./images/icon-plus.svg" role="button" alt="Plus icon"/></button>
           </div>
           <button class="cart-btn" id="add-cart-btn">Add to cart</button>
 
@@ -103,20 +103,20 @@
     <!-- Lightbox (hidden by default) -->
     <div id="lightbox" class="lightbox hidden overlay">
       <div class="lightbox-content">
-        <img id="close-lightbox" class="image" src="./images/icon-close.svg"></img>
-        <img id="lightbox-img" src="./images/image-product-1.jpg" alt="Zoomed Product">
-        <button class="direction-btn" id="prev-btn"><img class="direction-icon" src="./images/icon-previous.svg"/></button>
-        <button class="direction-btn" id="next-btn"><img class="direction-icon" src="./images/icon-next.svg"/></button>
+        <img id="close-lightbox" class="image" src="./images/icon-close.svg" alt="Cross icon - close image viewer"/>
+        <img id="lightbox-img" src="./images/image-product-1.jpg" alt="Enlarged view of Fall Limited Edition Sneakers">
+        <button class="direction-btn" id="prev-btn" aria-label="Navigate to previous product image"><img class="direction-icon" src="./images/icon-previous.svg" alt="Left arrowhead"/></button>
+        <button class="direction-btn" id="next-btn" aria-label="Navigate to next product image"><img class="direction-icon" src="./images/icon-next.svg" alt="Right arrowhead"/></button>
         <div id="lightbox-thumbnail-row">
-          <img class="image product-img lightbox-product-thumbnail" id="lightbox-product-thumbnail-1" src="./images/image-product-1-thumbnail.jpg" alt=""/>
-          <img class="image product-img lightbox-product-thumbnail" id="lightbox-product-thumbnail-2" src="./images/image-product-2-thumbnail.jpg" alt=""/>
-          <img class="image product-img lightbox-product-thumbnail" id="lightbox-product-thumbnail-3" src="./images/image-product-3-thumbnail.jpg" alt=""/>
-          <img class="image product-img lightbox-product-thumbnail" id="lightbox-product-thumbnail-4" src="./images/image-product-4-thumbnail.jpg" alt=""/>
+          <img class="image product-img lightbox-product-thumbnail" id="lightbox-product-thumbnail-1" src="./images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition Sneakers - thumbnail 1"/>
+          <img class="image product-img lightbox-product-thumbnail" id="lightbox-product-thumbnail-2" src="./images/image-product-2-thumbnail.jpg" alt="Fall Limited Edition Sneakers - thumbnail 2"/>
+          <img class="image product-img lightbox-product-thumbnail" id="lightbox-product-thumbnail-3" src="./images/image-product-3-thumbnail.jpg" alt="Fall Limited Edition Sneakers - thumbnail 3"/>
+          <img class="image product-img lightbox-product-thumbnail" id="lightbox-product-thumbnail-4" src="./images/image-product-4-thumbnail.jpg" alt="Fall Limited Edition Sneakers - thumbnail 4"/>
         </div>
       </div>
     </div>
     
-  </section>
+  </main>
   <script type="module" src="src/script.js"></script>
 </body>  
 </html>
