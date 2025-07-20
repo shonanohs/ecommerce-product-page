@@ -33,23 +33,23 @@
 
     <div class="nav-right">
       <img class="image empty-cart" id="cart-img-nav" src="./images/icon-cart.svg"/>
-      <div id="cart-quantity-icon">0</div>
+      <p id="cart-quantity-icon">0</p>
       <img class="image" id="avatar-img" src="./images/image-avatar.png"/>
       <div id="cart-info" class="cart-info hidden overlay">
         <div id="cart-info-content">
           <h3 id="cart-title">Cart</h3>
           <hr class="separator-full-length"/>
 
-          <div class="cart-content empty">
+          <div class="cart-content empty" id="cart-empty">
             <h3 id="empty-cart-text">Your cart is empty.</h3>
           </div>
           
-          <div class="hidden">
+          <div class="hidden" id="cart-full">
             <div class="cart-content full">
               <img class="image product-img" id="product-img-cart" src="./images/image-product-1-thumbnail.jpg" alt=""/>
               <div>
                 <h3 id="cart-product-name">Fall Limited Edition Sneakers</h3>
-                <p id="cart-price">$125 x <span id="quantity text cart">1</span><span id="cart-total-price">$375</span></p>
+                <p id="cart-price">$125.00 x <span id="quantity-text-cart"></span><span id="cart-total-price"></span></p>
               </div>
               <img class="image" id="delete-img" src="./images/icon-delete.svg"/>
             </div>
@@ -95,7 +95,7 @@
             <p id="quantity-text">0</p>
             <img class="image" id="plus-btn" src="./images/icon-plus.svg" role="button"/>
           </div>
-          <button class="cart-btn">Add to cart</button>
+          <button class="cart-btn" id="add-cart-btn">Add to cart</button>
 
       </div>
     </div>

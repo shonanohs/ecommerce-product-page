@@ -1,4 +1,5 @@
 let productQuantity = 0;
+let currentCartQuantity = productQuantity;
 let currentImageIndex = 1;
 
 const quantityText = document.getElementById("quantity-text");
@@ -16,6 +17,10 @@ document.getElementById("minus-btn").addEventListener("click", () => updateQuant
 // Lightbox navigation buttons
 document.getElementById("next-btn").addEventListener("click", () => updateLightboxImage("next"));
 document.getElementById("prev-btn").addEventListener("click", () => updateLightboxImage("prev"));
+
+// Add to/remove from cart buttons
+document.getElementById("add-cart-btn").addEventListener("click", () => addToCart());
+document.getElementById("delete-img").addEventListener("click", () => emptyCart());
 
 // Thumbnail click for main page
 thumbnails.forEach((thumb, index) => {
@@ -92,4 +97,25 @@ function updateLightboxImage(direction) {
     currentImageIndex = currentImageIndex === 1 ? 4 : currentImageIndex - 1;
   }
   selectImage(currentImageIndex);
+}
+
+// Add selected quantity of items to cart & update cart display accordingly
+function addToCart() {
+  currentCartQuantity += productQuantity;
+  if (productQuantity > 0) {
+    document.getElementById("cart-full").classList.remove("hidden");
+    document.getElementById("cart-empty").classList.add("hidden");
+    document.getElementById("cart-quantity-icon").innerText = currentCartQuantity;
+    document.getElementById("quantity-text-cart").innerText = currentCartQuantity;
+    document.getElementById("cart-total-price").innerText = "$" + (currentCartQuantity * 125.00).toFixed(2);
+    cartInfo.classList.remove("hidden");
+  }
+}
+
+// Reset cart display to empty
+function emptyCart() {
+    currentCartQuantity = 0;
+    document.getElementById("cart-full").classList.add("hidden");
+    document.getElementById("cart-empty").classList.remove("hidden");
+    document.getElementById("cart-quantity-icon").innerText = currentCartQuantity;
 }
