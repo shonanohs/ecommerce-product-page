@@ -17,7 +17,7 @@
   <!-- Navbar -->
   <section class="navbar">
     <div class="nav-left">
-      <img class="image" id="logo-img" src="./images/logo.svg"/>
+      <a href="index.html"><img class="image" id="logo-img" src="./images/logo.svg"/></a>
     </div>
     <div class="nav-centre">
       <nav>
@@ -38,7 +38,23 @@
         <div id="cart-info-content">
           <h3 id="cart-title">Cart</h3>
           <hr class="separator-full-length"/>
-          <h3 id="empty-cart-text">Your cart is empty.</h3>
+
+          <div class="cart-content empty">
+            <h3 id="empty-cart-text">Your cart is empty.</h3>
+          </div>
+          
+          <div class="hidden">
+            <div class="cart-content full">
+              <img class="image product-img" id="product-img-cart" src="./images/image-product-1-thumbnail.jpg" alt=""/>
+              <div>
+                <h3 id="cart-product-name">Fall Limited Edition Sneakers</h3>
+                <p id="cart-price">$125 x <span id="quantity text cart">1</span><span id="cart-total-price">$375</span></p>
+              </div>
+              <img class="image" id="delete-img" src="./images/icon-delete.svg"/>
+            </div>
+            <button class="cart-btn" id="checkout-btn">Checkout</button>
+          </div>
+
         </div>
       </div>
     </div>
@@ -83,7 +99,7 @@
       </div>
     </div>
 
-      <!-- Lightbox (hidden by default) -->
+    <!-- Lightbox (hidden by default) -->
     <div id="lightbox" class="lightbox hidden overlay">
       <div class="lightbox-content">
         <img id="close-lightbox" class="image" src="./images/icon-close.svg"></img>
@@ -98,9 +114,7 @@
         </div>
       </div>
     </div>
-
-
-
+    
   </section>
   <script type="module" src="src/script.js"></script>
 </body>  
