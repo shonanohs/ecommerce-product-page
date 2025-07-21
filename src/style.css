@@ -429,6 +429,7 @@ body {
   top: 35px;
   right: 0;
   width: 300px;
+  z-index: 2;
 }
 
 #cart-title {
@@ -656,5 +657,9 @@ body {
   .navbar-top {
     width: 95%;
     padding: 10px 0;
+  }
+
+  .cart-info {
+    right: 15vh;
   }
 }
