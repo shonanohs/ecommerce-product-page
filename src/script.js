@@ -17,7 +17,6 @@ const cartEmpty = document.getElementById("cart-empty");
 const cartQuantityIcon = document.getElementById("cart-quantity-icon");
 const cartQuantityText = document.getElementById("cart-quantity-text");
 const cartTotalPrice = document.getElementById("cart-total-price");
-const quantityAlert = document.getElementById("quantity-alert");
 const closeLightbox = document.getElementById("close-lightbox");
 const cartImgNavbar = document.getElementById("cart-img-nav");
 
@@ -38,7 +37,7 @@ const store = {
   cart: {
     quantity: 0
   },
-  selectedQuantity: 0,
+  selectedQuantity: 1,
   currentImageIndex: 0,
 };
 
@@ -54,27 +53,17 @@ prevBtn.addEventListener(CLICK, () => updateLightboxImage("prev"));
 addCartBtn.addEventListener(CLICK, () => addToCart());
 deleteBtn.addEventListener(CLICK, () => emptyCart());
 
-// Switch main images usign arrow keys
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowLeft") {
-    updateLightboxImage("prev");
-  } else if (e.key === "ArrowRight") {
-    updateLightboxImage("next");
-  }
-});
-
-// Open/close lightbox using 'x' or esc key
+// Lightbox navigation
 productImgMain.addEventListener(CLICK, () => {
   lightbox.classList.remove(HIDDEN);
   selectImage(store.currentImageIndex);
 });
 closeLightbox.addEventListener(CLICK, () => lightbox.classList.add(HIDDEN));
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      lightbox.classList.add(HIDDEN);
-    }
+  if (e.key === "ArrowLeft") updateLightboxImage("prev");
+  if (e.key === "ArrowRight") updateLightboxImage("next");
+  if (e.key === "Escape") lightbox.classList.add(HIDDEN);
 });
-
 
 // Thumbnail click for main page
 thumbnails.forEach((thumb, index) => {
@@ -97,11 +86,9 @@ cartImgNavbar.addEventListener(CLICK, () => cartInfo.classList.toggle(HIDDEN));
 // --- Functions ---
 function updateQuantity(direction) {
   if (direction === "plus") {
-    quantityAlert.classList.add(HIDDEN);
-    addCartBtn.disabled = false;
     store.selectedQuantity++;
   }
-  else if (direction === "minus" && store.selectedQuantity > 0) { 
+  else if (direction === "minus" && store.selectedQuantity > 1) { 
     store.selectedQuantity--;
   }
   quantityText.innerText = store.selectedQuantity;
@@ -147,33 +134,53 @@ function updateLightboxImage(direction) {
   selectImage(store.currentImageIndex);
 }
 
-// Add selected quantity of items to cart & update cart display accordingly
+// Render cart UI
+function renderCart() {
+  const { quantity } = store.cart;
+  if (quantity > 0) {
+    cartFull.classList.remove(HIDDEN);
+    cartEmpty.classList.add(HIDDEN);
+    cartTotalPrice.innerText = `$${(quantity * store.products[0].price).toFixed(2)}`;
+    cartQuantityText.innerText = quantity;
+  } else {
+    cartFull.classList.add(HIDDEN);
+    cartEmpty.classList.remove(HIDDEN);
+    cartTotalPrice.innerText = "$0.00";
+  }
+  cartQuantityIcon.innerText = quantity;
+}
+
+// Add selected quantity of items to cart 
 function addToCart() {
-  if (store.selectedQuantity === 0) {
-    quantityAlert.classList.remove(HIDDEN);
-    addCartBtn.disabled = true;
-    return;
-  }; 
   store.cart.quantity += store.selectedQuantity;
 
-  cartFull.classList.remove(HIDDEN);
-  cartEmpty.classList.add(HIDDEN);
-  cartQuantityIcon.innerText = store.cart.quantity;
-  cartQuantityText.innerText = store.cart.quantity;
-  cartTotalPrice.innerText = "$" + (store.cart.quantity * store.products[0].price).toFixed(2);
   cartInfo.classList.remove(HIDDEN);
-  store.selectedQuantity = 0;
+  saveCart();
+  renderCart();
+
+  store.selectedQuantity = 1;
   quantityText.innerText = store.selectedQuantity;
 }
 
 // Reset cart display to empty
 function emptyCart() {
     store.cart.quantity = 0;
-    cartFull.classList.add(HIDDEN);
-    cartEmpty.classList.remove(HIDDEN);
-    cartQuantityIcon.innerText = store.cart.quantity;
-    cartQuantityText.innerText = store.cart.quantity;
-    cartTotalPrice.innerText = "$0.00";
+    saveCart();
+    renderCart();
+}
+
+// Save cart quantity in localstorage to persist on reload
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(store.cart));
+}
+
+function loadCart() {
+  const saved = localStorage.getItem("cart");
+  if (saved) {
+    store.cart = JSON.parse(saved);
+  }
 }
 
 selectImage(0);
+loadCart();
+renderCart();
