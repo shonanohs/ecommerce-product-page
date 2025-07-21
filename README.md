@@ -21,9 +21,9 @@ Additional Features Added:
 <img width="1510" height="848" alt="image" src="https://github.com/user-attachments/assets/aacb6dd1-2a0c-4e07-a740-ccaccb0842b5" />
 
 ### Mobile:
-<img width="300" height="509.4" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/91517623-bdb9-4d4f-91e2-8266d65e8286" />
-<img width="300" height="509.4" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/c2bedb0c-788f-4b7d-8e60-de9a85147ebe"/>
-<img width="300" height="509.4" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/63908d26-4f2b-4663-a97c-08145f6e2d50"/>
+<img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/91517623-bdb9-4d4f-91e2-8266d65e8286" />
+<img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/c2bedb0c-788f-4b7d-8e60-de9a85147ebe"/>
+<img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/63908d26-4f2b-4663-a97c-08145f6e2d50"/>
 
 
 ## 🔗 Links
