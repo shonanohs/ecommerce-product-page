@@ -16,7 +16,7 @@ Additional Features Added:
 
 ## 📸 Screenshots
 ### Desktop:
-<img width="815" height="428" alt="image" src="https://github.com/user-attachments/assets/40556be1-71db-4ce4-abb1-55f669250624" />
+<img width="815" height="436" alt="image" src="https://github.com/user-attachments/assets/ad6227ee-4170-4d6c-adfd-2012e6bd1129" />
 
 <img width="815" height="457.7" alt="image" src="https://github.com/user-attachments/assets/aacb6dd1-2a0c-4e07-a740-ccaccb0842b5" />
 
