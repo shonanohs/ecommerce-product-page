@@ -16,9 +16,9 @@ Additional Features Added:
 
 ## 📸 Screenshots
 ### Desktop:
-<img width="1630" height="856" alt="image" src="https://github.com/user-attachments/assets/40556be1-71db-4ce4-abb1-55f669250624" />
+<img width="815" height="428" alt="image" src="https://github.com/user-attachments/assets/40556be1-71db-4ce4-abb1-55f669250624" />
 
-<img width="1510" height="848" alt="image" src="https://github.com/user-attachments/assets/aacb6dd1-2a0c-4e07-a740-ccaccb0842b5" />
+<img width="815" height="457.7" alt="image" src="https://github.com/user-attachments/assets/aacb6dd1-2a0c-4e07-a740-ccaccb0842b5" />
 
 ### Mobile:
 <img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/91517623-bdb9-4d4f-91e2-8266d65e8286" />
