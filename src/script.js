@@ -18,7 +18,11 @@ const cartQuantityIcon = document.getElementById("cart-quantity-icon");
 const cartQuantityText = document.getElementById("cart-quantity-text");
 const cartTotalPrice = document.getElementById("cart-total-price");
 const closeLightbox = document.getElementById("close-lightbox");
+const closeMenu = document.getElementById("close-menu");
 const cartImgNavbar = document.getElementById("cart-img-nav");
+const menuBtn = document.getElementById("menu-btn");
+const sideNavbar = document.getElementById("navbar-side");
+
 
 const store = {
   products: [
@@ -52,6 +56,14 @@ nextBtn.addEventListener(CLICK, () => updateLightboxImage("next"));
 prevBtn.addEventListener(CLICK, () => updateLightboxImage("prev"));
 addCartBtn.addEventListener(CLICK, () => addToCart());
 deleteBtn.addEventListener(CLICK, () => emptyCart());
+closeMenu.addEventListener(CLICK, () => {
+  sideNavbar.classList.remove('active');
+  overlay.style.display = "none";
+});
+menuBtn.addEventListener(CLICK, () => {
+  sideNavbar.classList.add('active');
+  overlay.style.display = "block";
+});
 
 // Lightbox navigation
 productImgMain.addEventListener(CLICK, () => {

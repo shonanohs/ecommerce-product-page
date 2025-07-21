@@ -15,9 +15,10 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
+  <!-- Top Navbar -->
+  <nav class="navbar-top">
     <div class="nav-left">
+      <button id="menu-btn"><img class="image" src="./images/icon-menu.svg" alt=""/></button>
       <a href="index.html"><img class="image" id="logo-img" src="./images/logo.svg" alt="Sneaker Company logo"/></a>
     </div>
     <div class="nav-centre">
@@ -34,7 +35,7 @@
       <button id="cart-img-nav" aria-label="Open or close the cart"><img class="image empty-cart" src="./images/icon-cart.svg" alt=""/></button>
       <span id="cart-quantity-icon" aria-live="polite">0</span>
       <img class="image" id="avatar-img" src="./images/image-avatar.png" alt="User avatar"/>
-      <div id="cart-info" class="cart-info hidden overlay">
+      <div id="cart-info" class="cart-info hidden">
         <div id="cart-info-content">
           <h2 id="cart-title">Cart</h2>
           <hr class="separator-full-length"/>
@@ -61,6 +62,19 @@
       </div>
     </div>
   </nav>
+
+  <!-- Side Navbar -->
+  <nav class="navbar-side" id="navbar-side">
+      <button id="close-menu" aria-label="Close side menu"><img class="image" src="./images/icon-close.svg" alt=""/></button>
+      <ul id="navbar-buttons">
+        <li>Collections</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+  </nav>
+  <div class="overlay" id="overlay"></div>
 
   <hr class="separator"/>
 
