@@ -17,6 +17,9 @@ const cartEmpty = document.getElementById("cart-empty");
 const cartQuantityIcon = document.getElementById("cart-quantity-icon");
 const cartQuantityText = document.getElementById("cart-quantity-text");
 const cartTotalPrice = document.getElementById("cart-total-price");
+const quantityAlert = document.getElementById("quantity-alert");
+const closeLightbox = document.getElementById("close-lightbox");
+const cartImgNavbar = document.getElementById("cart-img-nav");
 
 const store = {
   products: [
@@ -39,47 +42,62 @@ const store = {
   currentImageIndex: 0,
 };
 
+const HIDDEN = "hidden";
+const CLICK = "click"
+
 
 // --- Event Listeners ---
-plusBtn.addEventListener("click", () => updateQuantity("plus"));
-minusBtn.addEventListener("click", () => updateQuantity("minus"));
-nextBtn.addEventListener("click", () => updateLightboxImage("next"));
-prevBtn.addEventListener("click", () => updateLightboxImage("prev"));
-addCartBtn.addEventListener("click", () => addToCart());
-deleteBtn.addEventListener("click", () => emptyCart());
+plusBtn.addEventListener(CLICK, () => updateQuantity("plus"));
+minusBtn.addEventListener(CLICK, () => updateQuantity("minus"));
+nextBtn.addEventListener(CLICK, () => updateLightboxImage("next"));
+prevBtn.addEventListener(CLICK, () => updateLightboxImage("prev"));
+addCartBtn.addEventListener(CLICK, () => addToCart());
+deleteBtn.addEventListener(CLICK, () => emptyCart());
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft") {
+    updateLightboxImage("prev");
+  } else if (e.key === "ArrowRight") {
+    updateLightboxImage("next");
+  }
+});
+
+// Open/close lightbox using 'x' or esc key
+productImgMain.addEventListener(CLICK, () => {
+  lightbox.classList.remove(HIDDEN);
+  selectImage(store.currentImageIndex);
+});
+closeLightbox.addEventListener(CLICK, () => lightbox.classList.add(HIDDEN));
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      lightbox.classList.add(HIDDEN);
+    }
+});
+
 
 // Thumbnail click for main page
 thumbnails.forEach((thumb, index) => {
-  thumb.addEventListener("click", () => {
+  thumb.addEventListener(CLICK, () => {
     selectImage(index);
   });
 });
 
 // Thumbnail click for lightbox
 lightboxThumbnails.forEach((thumb, index) => {
-  thumb.addEventListener("click", () => {
+  thumb.addEventListener(CLICK, () => {
     selectImage(index);
   });
 });
 
-// Open/close lightbox
-productImgMain.addEventListener("click", () => {
-  lightbox.classList.remove("hidden");
-  selectImage(store.currentImageIndex);
-});
-document.getElementById("close-lightbox").addEventListener("click", () => {
-  lightbox.classList.add("hidden");
-});
-
 // Open/close cart
-document.getElementById("cart-img-nav").addEventListener("click", () => {
-    cartInfo.classList.toggle("hidden");
-});
+cartImgNavbar.addEventListener(CLICK, () => cartInfo.classList.toggle(HIDDEN));
 
 
 // --- Functions ---
 function updateQuantity(direction) {
   if (direction === "plus") {
+    quantityAlert.classList.add(HIDDEN);
+    addCartBtn.disabled = false;
     store.selectedQuantity++;
   }
   else if (direction === "minus" && store.selectedQuantity > 0) { 
@@ -130,15 +148,19 @@ function updateLightboxImage(direction) {
 
 // Add selected quantity of items to cart & update cart display accordingly
 function addToCart() {
-  if (store.selectedQuantity === 0) return; 
+  if (store.selectedQuantity === 0) {
+    quantityAlert.classList.remove(HIDDEN);
+    addCartBtn.disabled = true;
+    return;
+  }; 
   store.cart.quantity += store.selectedQuantity;
 
-  cartFull.classList.remove("hidden");
-  cartEmpty.classList.add("hidden");
+  cartFull.classList.remove(HIDDEN);
+  cartEmpty.classList.add(HIDDEN);
   cartQuantityIcon.innerText = store.cart.quantity;
   cartQuantityText.innerText = store.cart.quantity;
   cartTotalPrice.innerText = "$" + (store.cart.quantity * store.products[0].price).toFixed(2);
-  cartInfo.classList.remove("hidden");
+  cartInfo.classList.remove(HIDDEN);
   store.selectedQuantity = 0;
   quantityText.innerText = store.selectedQuantity;
 }
@@ -146,8 +168,8 @@ function addToCart() {
 // Reset cart display to empty
 function emptyCart() {
     store.cart.quantity = 0;
-    cartFull.classList.add("hidden");
-    cartEmpty.classList.remove("hidden");
+    cartFull.classList.add(HIDDEN);
+    cartEmpty.classList.remove(HIDDEN);
     cartQuantityIcon.innerText = store.cart.quantity;
     cartQuantityText.innerText = store.cart.quantity;
     cartTotalPrice.innerText = "$0.00";

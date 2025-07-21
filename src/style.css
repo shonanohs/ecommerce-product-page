@@ -262,6 +262,10 @@ body {
   margin-top: 5px;
 }
 
+#quantity-alert {
+  font-size: 14px;
+}
+
 
 /* Lightbox */
 
