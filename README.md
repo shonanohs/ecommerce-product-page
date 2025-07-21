@@ -1,5 +1,5 @@
 # 🛍️ E-Commerce Product Page
-This is a solution to the [E-Commerce Product Page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6).
+This is a solution to the [E-Commerce Product Page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). The result is an e-commerce product page for a sneaker company allowing users to browse an image gallery of the product and add a selected quantity to their cart.
 
 ## 🎯 The Challenge
 Users should be able to:
