@@ -54,6 +54,7 @@ prevBtn.addEventListener(CLICK, () => updateLightboxImage("prev"));
 addCartBtn.addEventListener(CLICK, () => addToCart());
 deleteBtn.addEventListener(CLICK, () => emptyCart());
 
+// Switch main images usign arrow keys
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") {
     updateLightboxImage("prev");

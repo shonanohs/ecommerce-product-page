@@ -146,6 +146,12 @@ body {
     border: 2px solid transparent;
 }
 
+.product-thumbnail {
+    width: 20%;
+    height: auto;
+    border: 2px solid transparent;
+}
+
 .product-thumbnail-clicked {
     border: 2px solid var(--orange);
     opacity: 60%;
@@ -169,6 +175,7 @@ body {
 #company-name {
     text-transform: uppercase;
     font-size: 14px;
+    font-weight: 700;
     color: var(--dark-grayish-blue);
     letter-spacing: 1.5px;
     margin-top: 5%;
@@ -204,8 +211,14 @@ body {
 #product-price-original {
     color: var(--dark-grayish-blue);
     font-size: 16px;
+    font-weight: 700;
     text-decoration: line-through;
     margin: 0;
+}
+
+#product-price-discounted {
+  font-size: 20px;
+    font-weight: 700;
 }
 
 
@@ -334,8 +347,10 @@ body {
 #close-lightbox {
   position: absolute;
   top: 1px;
-  right: 1px;
+  left: 475px;
   user-select: none;
+  border: none;
+  background-color: transparent;
 }
 
 .direction-btn {
@@ -392,7 +407,7 @@ body {
   align-items: center;
   background-color: var(--white);
   min-height: 150px;
-  justify-content: center; /* center the empty state text */
+  justify-content: center;
 }
 
 .cart-info {
@@ -409,6 +424,7 @@ body {
 
 #empty-cart-text {
   font-size: 14px;
+  font-weight: 700;
   color: var(--dark-grayish-blue);
 }
 
@@ -426,7 +442,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  gap: 15px;
+  gap: 10px;
   align-items: center;
   justify-content: space-around;
 }
@@ -464,6 +480,8 @@ body {
   width: 12px;
   height: 14px;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 #checkout-btn {
