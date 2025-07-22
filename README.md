@@ -16,13 +16,14 @@ Additional Features Added:
 
 ## 📸 Screenshots
 ### Desktop:
-<img width="815" height="436" alt="image" src="https://github.com/user-attachments/assets/ad6227ee-4170-4d6c-adfd-2012e6bd1129" />
+<img width="815" height="436" alt="image" src="https://github.com/user-attachments/assets/ad6227ee-4170-4d6c-adfd-2012e6bd1129"/>
 
-<img width="815" height="457.7" alt="image" src="https://github.com/user-attachments/assets/aacb6dd1-2a0c-4e07-a740-ccaccb0842b5" />
+<img width="815" height="457.7" alt="image" src="https://github.com/user-attachments/assets/aacb6dd1-2a0c-4e07-a740-ccaccb0842b5"/>
 
 ### Mobile:
-<img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/91517623-bdb9-4d4f-91e2-8266d65e8286" />
-<img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/c2bedb0c-788f-4b7d-8e60-de9a85147ebe"/>
+<img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/91517623-bdb9-4d4f-91e2-8266d65e8286"/>
+<img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/25748a06-0101-4b9d-8eb2-f7b1b1ee770c"/>
+<img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/c50dd3fd-9e97-494d-935b-99b676688593"/>
 <img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/63908d26-4f2b-4663-a97c-08145f6e2d50"/>
 
 
