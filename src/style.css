@@ -216,7 +216,7 @@ body {
 
 @media (max-width: 900px) {
   #price-discount-container {
-    justify-content: center; /* center on smaller screens */
+    justify-content: center;
   }
 }
 
