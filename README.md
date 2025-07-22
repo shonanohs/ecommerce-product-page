@@ -21,14 +21,14 @@ Additional Features Added:
 <img width="815" height="457.7" alt="image" src="https://github.com/user-attachments/assets/aacb6dd1-2a0c-4e07-a740-ccaccb0842b5"/>
 
 ### Mobile:
-<img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/91517623-bdb9-4d4f-91e2-8266d65e8286"/>
+<img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/c7c958af-1a0c-4623-a111-40d27fd9e4e0"/>
 <img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/25748a06-0101-4b9d-8eb2-f7b1b1ee770c"/>
 <img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/c50dd3fd-9e97-494d-935b-99b676688593"/>
 <img width="200" height="339.6" alt="20250721_173947000_iOS (1)" src="https://github.com/user-attachments/assets/63908d26-4f2b-4663-a97c-08145f6e2d50"/>
 
 
 ## 🔗 Links
-- Live Site URL: https://sneakers-25.netlify.app/
+- Live Site URL: [https://sneakers-25.netlify.app/](https://sneakers-2025.netlify.app/)
 
 ## 🛠️ Built With
 - HTML
